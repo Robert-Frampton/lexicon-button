@@ -37,7 +37,16 @@
  * @param? label
  */
 {template .button}
-	<button class="{$elementClasses}" type="button">
+	{@param? attributes: attributes}
+
+	<button
+		{if isNonnull($attributes)}
+			{$attributes}
+		{/if}
+
+		class="{$elementClasses}"
+		type="button"
+	>
 		{if isNonnull($icon)}
 			<span class="icon-monospaced">
 				{call LexiconIcon.render data="all"}
@@ -58,7 +67,17 @@
  * @param value
  */
 {template .input}
-	<input class="{$elementClasses}" type="submit" value="{$value}" />
+	{@param? attributes: attributes}
+
+	<input
+		{if isNonnull($attributes)}
+			{$attributes}
+		{/if}
+
+		class="{$elementClasses}"
+		type="submit"
+		value="{$value}"
+	/>
 {/template}
 
 /**
@@ -67,5 +86,16 @@
  * @param label
  */
 {template .link}
-	<a class="{$elementClasses}" href="{$href}">{$label}</a>
+	{@param? attributes: attributes}
+
+	<a
+		{if isNonnull($attributes)}
+			{$attributes}
+		{/if}
+
+		class="{$elementClasses}"
+		href="{$href}"
+	>
+		{$label}
+	</a>
 {/template}
