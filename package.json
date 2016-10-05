@@ -37,6 +37,7 @@
     "gulp": "^3.8.11",
     "gulp-metal": "^1.0.0",
     "karma-html2js-preprocessor": "^1.0.0",
+    "metal-dom": "^2.4.6",
     "metal-karma-config": "^2.1.1"
   }
 }

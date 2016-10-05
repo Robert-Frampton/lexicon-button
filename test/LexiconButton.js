@@ -1,5 +1,6 @@
 'use strict';
 
+import dom from 'metal-dom';
 import LexiconButton from '../src/LexiconButton';
 
 let lexiconButton;
@@ -64,6 +65,20 @@ describe('LexiconButton', () => {
 		});
 
 		assert.strictEqual(lexiconButton.element.outerHTML, __html__['test/fixture/testLevelLexiconButton.html']);
+	});
+
+	it('should use the provided onClick function for the data-onclick attribute of the generated button', (done) => {
+		lexiconButton = new LexiconButton({
+			onClick: function(event) {
+				assert.strictEqual(lexiconButton.element, event.target);
+
+				done();
+			}
+		});
+
+		assert.strictEqual(lexiconButton.element.outerHTML, __html__['test/fixture/testDefaultLexiconButton.html']);
+
+		dom.triggerEvent(lexiconButton.element, 'click');
 	});
 
 	it('should use the provided size to generate the button markup', () => {
