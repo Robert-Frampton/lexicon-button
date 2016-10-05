@@ -8,6 +8,7 @@
  * @param? elementClasses
  * @param? href
  * @param? level
+ * @param? onClick
  * @param? size
  * @param? value
  */
@@ -35,9 +36,10 @@
  * @param? elementClasses
  * @param? icon
  * @param? label
+ * @param? onClick
  */
 {template .button}
-	<button class="{$elementClasses}" type="button">
+	<button class="{$elementClasses}" data-onclick="{$onClick}" type="button">
 		{if isNonnull($icon)}
 			<span class="icon-monospaced">
 				{call LexiconIcon.render data="all"}

@@ -82,6 +82,17 @@ LexiconButton.STATE = {
 	},
 
 	/**
+	 * Function that is invoked after clicking the button element.
+	 * @default undefined
+	 * @instance
+	 * @memberof LexiconButton
+	 * @type {function}
+	 */
+	onClick: {
+		validator: core.isFunction
+	},
+
+	/**
 	 * URI of the button. Setting `value` will make the component render an input
 	 * instead of a button but still look like one
 	 * @default undefined

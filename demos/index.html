@@ -38,7 +38,12 @@
 			var sizes = ['xs', 'sm', 'lg'];
 
 			// Default
-			new metal.LexiconButton({ label: 'Button' }, '#default');
+			new metal.LexiconButton({
+				label: 'Button',
+				onClick: function(event) {
+					alert('Hello, World!');
+				}
+			}, '#default');
 
 			// Levels
 			levels.forEach(function(level) {
